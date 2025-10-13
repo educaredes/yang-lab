@@ -1,0 +1,41 @@
+targets:
+  router1:
+    # gNMI target address; CLI flag `--address`
+    address: "<container_name>:57400"
+    # gNMI target user name; CLI flag `--username`
+    username: admin
+    # gNMI target user password; CLI flag `--password`
+    password: NokiaSrl1!
+    # do not verify the target certificate when using tls; CLI flag `--skip-verify`
+    skip-verify: true
+    log: true
+    # log file location; CLI flag `--log-file`
+    log-file: /tmp/gnmic.log
+    subscriptions:
+      - r1_traffic_stats_e1-1
+      - r1_interface_status_e1-1
+
+subscriptions:
+  r1_traffic_stats_e1-1:
+    paths:
+       - "..."
+    stream-mode: sample
+    sample-interval: 5s
+    encoding: JSON_IETF
+    outputs: 
+      - stdout-output
+  r1_interface_status_e1-1:
+    paths:
+      - "..."
+      - "..."
+    stream-mode: on-change
+    encoding: JSON_IETF
+    outputs: 
+      - stdout-output
+
+outputs:
+  stdout-output:
+    type: file # output type
+    file-type: stdout # or stderr
+    # Exported msg format, json, protojson, prototext, proto, event
+    format: event
