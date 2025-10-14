@@ -1,6 +1,15 @@
+> **RDSV/SDNV**
+>
+> Curso 2025-26
+
+
 <!-- omit from toc -->
 Laboratorio de programación de redes basada en modelos YANG
 ===========================================================
+
+> Última actualización de la práctica: 15 de octubre de 2025
+
+
 <!-- omit from toc -->
 # Tabla de contenidos
 - [Introducción](#introducción)
@@ -232,7 +241,7 @@ gnmic -a <container_name>:57400 -u admin -p NokiaSrl1! get --path "/yang-library
 ```
 Observe que el operando para realizar la consulta es a modo de *path* estructurado que navega por el modelo YANG en cuestión para recabar información de un nodo de datos concreto (es decir, del nodo *`datastore`*). 
 
->**Nota**: En esencia, el filtro *path* que utiliza gNMI para navegar por datos estructurados de acuerdo a modelos YANG es muy similar al filtro *XPath* utilizado en NETCONF para navegar por datos codificados en XML y modelados con YANG, diferenciándose principalmente en que gNMI usa una representación interna codificada en Protobuf para procesar esos *paths*. Para más información sobre el filtro *XPath* puede consultar la especificación [*"XML Path Language (XPath) Version 1.0"*](https://www.w3.org/TR/1999/REC-xpath-19991116/) definida por W3C (*World Wide Web Consortium*) y acogida por YANG y el protocolo NETCONF según se recoge en la sección [*6.4. XPath Evaluations*](https://datatracker.ietf.org/doc/html/rfc7950#section-6.4) de la RFC 7950 - *"The YANG 1.1 Data Modeling Language"* y en la sección [*8.9. XPath Capability*](https://datatracker.ietf.org/doc/html/rfc7950#section-6.4) de la RFC 6241 - *"Network Configuration Protocol (NETCONF)"* definidas por el IETF. En cambio, para la definición del filtro *path* utilizado en gNMI, puede encontrar más información en la propia especificación del protocolo definida por OpenConfig en la sección [*2.2.2 Paths*](https://www.openconfig.net/docs/gnmi/gnmi-specification/#222-paths) y en material complementario a la especificación ["Schema path encoding conventions for gNMI"](https://github.com/openconfig/reference/blob/master/rpc/gnmi/gnmi-path-conventions.md) y ["Representing gNMI Paths as Strings"](https://github.com/openconfig/reference/blob/master/rpc/gnmi/gnmi-path-strings.md).
+>**Nota**: En esencia, el filtro *path* que utiliza gNMI para navegar por datos estructurados de acuerdo a modelos YANG es muy similar al filtro *XPath* utilizado en NETCONF para navegar por datos codificados en XML y modelados con YANG, diferenciándose principalmente en que gNMI usa una representación interna codificada en Protobuf para procesar esos *paths*. Para más información sobre el filtro *XPath* puede consultar la especificación [*XML Path Language (XPath) Version 1.0*](https://www.w3.org/TR/1999/REC-xpath-19991116/) definida por W3C (*World Wide Web Consortium*) y acogida por YANG y el protocolo NETCONF según se recoge en la sección [*6.4. XPath Evaluations*](https://datatracker.ietf.org/doc/html/rfc7950#section-6.4) de la RFC 7950 - *"The YANG 1.1 Data Modeling Language"* y en la sección [*8.9. XPath Capability*](https://datatracker.ietf.org/doc/html/rfc7950#section-6.4) de la RFC 6241 - *"Network Configuration Protocol (NETCONF)"* definidas por el IETF. En cambio, para la definición del filtro *path* utilizado en gNMI, puede encontrar más información en la propia especificación del protocolo definida por OpenConfig en la sección [*2.2.2 Paths*](https://www.openconfig.net/docs/gnmi/gnmi-specification/#222-paths) y en material complementario a la especificación [*Schema path encoding conventions for gNMI*](https://github.com/openconfig/reference/blob/master/rpc/gnmi/gnmi-path-conventions.md) y [*Representing gNMI Paths as Strings*](https://github.com/openconfig/reference/blob/master/rpc/gnmi/gnmi-path-strings.md).
 
 
 En el siguiente diagrama, se incluye un ejemplo de cómo construir un filtro de tipo *path* para consultar información más concreta proveniendo del módulo YANG `ietf-yang-library@2019-01-04.yang`, similar al ejemplo con filtro *subtree* que veíamos con NECONF. En concreto, vemos de nuevo cómo definir un filtro que permita obtener sólo información del módulo YANG `ietf-netconf` implementado por el equipo de red. A la izquierda se vuelve a representar el diagrama parcial en forma de árbol que devuelve la herramienta *pyang* que nos facilita saber cómo navegar por los datos del modelo para construir el filtro *path*.
