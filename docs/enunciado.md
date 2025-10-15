@@ -311,7 +311,7 @@ Una vez desplegado el escenario, evalúe la topología de red y la configuració
 
 Además, utilizaremos una aplicación Java que integra la librería [`YANG Tools`](https://github.com/opendaylight/yangtools) para normalizar datos del escenario de red desplegado según modelos YANG de referencia del IETF definidos en la [RFC 8345](https://www.rfc-editor.org/info/rfc8345). Para ejecutar la aplicación, introduzca el siguiente comando:
 ```bash 
-java -jar topology-driver-1.0.jar clab-srlinux-testbed/topology-data.json output.json output.xml 
+java -jar topology-driver-1.0.jar clab-routing-testbed/topology-data.json output.json output.xml 
 ```
 
 Examine la salida estándar que devuelve la ejecución de la aplicación, así cómo los fichero `output.json` y `output.xml` generados, analizando su contenido.
