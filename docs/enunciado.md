@@ -7,7 +7,7 @@
 Laboratorio de programación de redes basada en modelos YANG
 ===========================================================
 
-> Última actualización de la práctica: 15 de octubre de 2025
+> Última actualización de la práctica: 16 de octubre de 2025
 
 
 <!-- omit from toc -->
@@ -263,6 +263,7 @@ tcpdump -i mgmt0 -w gnmi-traffic.pcap
 ```
 
 Mientras está activa la captura de tráfico, realizaremos las consultas con gNMI ejecutadas anteriormente para obtener las capacidades del router y para consultar el estado operativo de una de sus interfaces de red. Sin embargo, deberemos incluir la opción `--log-tls-secret` al comando de gNMIc para que registre en un fichero el secreto compartido TLS de la sesión y que permitirá descifrar la comunicación gNMI protegida por TLS al capturar tráfico. Por cada operación consultada con gNMI se generará un secreto TLS diferente bajo un fichero con el nombre  `<container_name>:57400.tlssecret`. El fichero generado con la primera consulta renómbrelo como `<container_name>-capabilities.tlssecret` mientras que el fichero generado con la segunda consulta renómbrelo como `<container_name>-get-rpc.tlssecret`.
+>**Nota**: Por defecto, el fichero con el secreto TLS se genera siempre con el mismo nombre `<container_name>:57400.tlssecret`, por lo que debe renombrarlo justo después de cada operación que realice con gNMIc, de lo contrario se sobreescribirá su contenido.
 
 Una vez completadas las consultas y guardados los ficheros de secreto TLS de cada una de ellas, pare la captura de tráfico y recupere el fichero `gnmi-traffic.pcap` desde la máquina virtual utilizando el siguiente comando:
 ```bash 
@@ -314,7 +315,7 @@ Además, utilizaremos una aplicación Java que integra la librería [`YANG Tools
 java -jar topology-driver-1.0.jar clab-routing-testbed/topology-data.json output.json output.xml 
 ```
 
-Examine la salida estándar que devuelve la ejecución de la aplicación, así cómo los fichero `output.json` y `output.xml` generados, analizando su contenido.
+Examine la salida estándar que devuelve la ejecución de la aplicación, así cómo los ficheros `output.json` y `output.xml` generados, analizando su contenido.
 
 :point_right: **Pregunta 8:** Una vez analizado el nuevo escenario de red desplegado, añada en la memoria una breve descripción del mismo apoyándose en el uso capturas de pantalla si lo desea. ¿Qué función realiza la aplicación Java evaluada? ¿Qué utilidad podría tener para un controlador de red SDN que controle y gestión equipos con soporte para YANG? Justifique sus respuestas.
 
@@ -355,7 +356,7 @@ Para la configuración de direccionamiento IP en los enlaces entre routers, se p
 |-----------------|----------------|
 | **r1<->r2**        | 10.10.10.0/30       | 
 | **r1<->r3**        | 10.10.11.0/30       |
-| **r2>->r3**        | 10.10.12.0/30       |
+| **r2<->r3**        | 10.10.12.0/30       |
 
 :point_right: **Pregunta 9:** Teniendo en cuenta estas directrices, deberá de definir un *shell script* general que permita automatizar las ejecuciones de los comandos de gNMIc de tipo *`set`* para la configuración de direccionamiento y encaminamiento IP de todos los routers del escenario. Para facilitar la tarea de cómo definir las variables necesarias para las consultas especificadas en las plantillas de configuración de las consultas gNMIc de tipo *`set`*, determine a qué modelos YANG propietarios de Nokia SR Linux apuntan los *paths* incluidos. Incluya el *script* en la entrega asociada a la práctica. Realice además pruebas de conectividad punto a punto entre los contenedores de los *hosts* extremos para verificar que la configuración de red es exitosa. Incluya captura de alguna de estas pruebas en la memoria.
 
