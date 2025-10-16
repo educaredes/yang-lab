@@ -315,7 +315,7 @@ Además, utilizaremos una aplicación Java que integra la librería [`YANG Tools
 java -jar topology-driver-1.0.jar clab-routing-testbed/topology-data.json output.json output.xml 
 ```
 
-Examine la salida estándar que devuelve la ejecución de la aplicación, así cómo los ficheros `output.json` y `output.xml` generados, analizando su contenido.
+Examine la salida estándar que devuelve la ejecución de la aplicación, así como los ficheros `output.json` y `output.xml` generados, analizando su contenido.
 
 :point_right: **Pregunta 8:** Una vez analizado el nuevo escenario de red desplegado, añada en la memoria una breve descripción del mismo apoyándose en el uso capturas de pantalla si lo desea. ¿Qué función realiza la aplicación Java evaluada? ¿Qué utilidad podría tener para un controlador de red SDN que controle y gestión equipos con soporte para YANG? Justifique sus respuestas.
 
