@@ -246,7 +246,7 @@ Para ver cómo funciona esta operación de consulta de las capacidades con gNMI,
 gnmic -a <container_name>:57400 -u admin -p NokiaSrl1! --skip-verify capabilities
 ```
 
-:point_right: **Pregunta 4:** Examine la respuesta de las capacidades y determine la información proporcionada. Compare el resultado con el de la operación de capacidades realizada con NETCONF. ¿En gNMI se anuncian capacidades operativas más allá de los modelos YANG? ¿Observa diferencias entre los modelos que devuelve gNMI frente a NETCONF al determinar sus capacidades? ¿Hay negociación de versión del protocolo y formato de codificación de datos implícita en NETCONF? Justifique sus respuestas.
+:point_right: **Pregunta 4:** Examine la respuesta de las capacidades y determine la información proporcionada. Compare el resultado con el de la operación de extracción de capacidades realizada con NETCONF. ¿En gNMI se anuncian capacidades operativas del equipo de red más allá de los modelos YANG? ¿Observa diferencias entre los modelos que devuelve gNMI frente a NETCONF al determinar sus capacidades? ¿Hay negociación de versión del protocolo y del formato de codificación de datos implícita en NETCONF? Justifique sus respuestas.
 
 Probemos a realizar consultas de tipo *`get`* través del cliente `gNMIC`. Probemos primero a consultar la información del modelo YANG `ietf-yang-library@2019-01-04.yang` a partir de gNMI. Para ello, realice la consulta del siguiente modo para obtener sólo la información que proporciona el modelo sobre los *datastores*:
 ```bash 
