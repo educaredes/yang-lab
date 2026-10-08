@@ -63,6 +63,7 @@ Habrá contenedores que sean equipos de red de tipo Nokia SR Linux que harán de
     ```bash
     docker exec -it <container_name> sr_cli
     ```
+  >**Nota:** En cualquiera de los casos, para salir de la CLI de Nokia SR Linux, ejecute el comando `quit`.
 - Acceder a la terminal de *shell* interactiva de Linux via comando `docker exec`:
   ```bash
   docker exec -it <container_name> bash
@@ -150,7 +151,7 @@ Para ver un ejemplo del mensaje de tipo *`<hello>`* que envía el servidor YANG 
 ```bash 
 ssh -p 830 admin@<container_name> -s netconf
 ```
->**Nota:** La contraseña es `NokiaSrl1!`
+>**Nota:** La contraseña es `NokiaSrl1!`. Para salir pulsa `Ctrl+C`.
 
 Se observará una llegada del mensaje de tipo *`<hello>`* desde el servidor, quedando a la espera del mensaje de *`<hello>`* con las capacidades soportadas desde el lado del cliente antes de poder entonces realizar cualquier operación RPC.
 
