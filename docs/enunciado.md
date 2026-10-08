@@ -330,7 +330,7 @@ java -jar topology-driver-1.0.jar /tmp/.clab/clab-routing-testbed/topology-data.
 
 Examine la salida estándar que devuelve la ejecución de la aplicación, así como los ficheros `topology.json` y `topology.xml` generados, analizando su contenido.
 
-:point_right: **Pregunta 8:** Una vez analizado el nuevo escenario de red desplegado, añada en la memoria una breve descripción del mismo apoyándose en el uso capturas de pantalla si lo desea. ¿Qué función realiza la aplicación Java evaluada? ¿Qué utilidad podría tener para un controlador de red SDN que controle y gestión equipos con soporte para YANG? Justifique sus respuestas.
+:point_right: **Pregunta 8:** Una vez analizado el nuevo escenario de red desplegado, añada en la memoria una breve descripción del mismo apoyándose en el uso de capturas de pantalla si lo desea. ¿Qué función realiza la aplicación Java evaluada? ¿Qué utilidad podría tener para un controlador de red SDN que controle y gestión equipos con soporte para YANG? Justifique sus respuestas.
 
 Como se ha introducido y se habrá verificado en el análisis previo realizado del escenario de red desplegado, falta por configurar el direccionamiento IP del las interfaces que interconectan los routers, así como el encaminamiento IP para permitir la conectividad entre los clientes o hosts extremos de la red. Para completar esta configuración realizaremos consultas de tipo *`set`* con el cliente `gNMIc`. 
 
