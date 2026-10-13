@@ -7,7 +7,7 @@
 Laboratorio de programación de redes basada en modelos YANG
 ===========================================================
 
-> Última actualización de la práctica: 08 de octubre de 2026
+> Última actualización de la práctica: 13 de octubre de 2026
 
 
 <!-- omit from toc -->
@@ -220,7 +220,7 @@ En el siguiente diagrama, se incluye un ejemplo de cómo construir un filtro de 
 
 Prueba a cambiar el filtro de tipo *subtree* en el *script* [`get-rpc-yang-library-srlinux.py`](../activities/module-1/get-rpc-yang-library-srlinux.py) según lo especificado en la figura anterior y vea cómo ahora se proporciona información relativa sólo al módulo `ietf-netconf`.
 
-Una vez evaluadas las capacidades del equipo de red Nokia SR Linux con NETCONF, evaluaremos con el mismo protocolo de gestión de red cómo realizar consultas RPC concretas para datos operativos o de configuración. Para ello, pondremos como caso de uso evaluar datos operativos y de configuración de una interfaz concreta de red del equipo utilizando un modelo YANG propietario del equipo Nokia SR Linux para dicho propósito. El modelo YANG a utilizar será uno propietario de Nokia SR Linux: `srl_nokia-interfaces@2026-07-31.yang`. Busque el modelo YANG dentro del catálogo de modelos que descargó  en la carpeta ``yang-models-srlinux` para analizar su contenido. Utilice la herramienta *pyang* para poder analizar la estructura en forma de árbol del modelo YANG, ejecutando el siguiente comando:
+Una vez evaluadas las capacidades del equipo de red Nokia SR Linux con NETCONF, evaluaremos con el mismo protocolo de gestión de red cómo realizar consultas RPC concretas para datos operativos o de configuración. Para ello, pondremos como caso de uso evaluar datos operativos y de configuración de una interfaz concreta de red del equipo utilizando un modelo YANG propietario del equipo Nokia SR Linux para dicho propósito. El modelo YANG a utilizar será uno propietario de Nokia SR Linux: `srl_nokia-interfaces@2026-07-31.yang`. Busque el modelo YANG dentro del catálogo de modelos que descargó  en la carpeta `yang-models-srlinux` para analizar su contenido. Utilice la herramienta *pyang* para poder analizar la estructura en forma de árbol del modelo YANG, ejecutando el siguiente comando:
 ```bash 
 pyang -f tree srl_nokia-interfaces@2026-07-31.yang
 ```
