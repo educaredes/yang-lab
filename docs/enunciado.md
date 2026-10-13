@@ -523,7 +523,7 @@ chmod +rx prometheus
 chmod +rx prometheus/prometheus.yaml
 ```
 
-Una vez realizado los pasos anteriores, para poder desplegar los servicios del sistema de telemetría ejecute el siguiente comando desde la nueva localización del directorio `module-3`:
+Una vez realizados los pasos anteriores, para poder desplegar los servicios del sistema de telemetría ejecute el siguiente comando desde la nueva localización del directorio `module-3`:
 ```bash
 docker compose -f docker-compose.yaml up -d
 ```
